@@ -1,3 +1,0 @@
-// Creating a Mongo client 
-MongoClient mongoClient = new MongoClient( "localhost" , 27017 ); 
-System.out.println("Created Mongo Connection successfully"); 
