@@ -23,8 +23,9 @@ Using Eclipse create a simple Java-Maven Project.
 
 
 ## Steps to follow :
-1. import Maven Dependencies
-2. Create MongoDB Java Connection
+1. Create Maven Project
+2. import Maven Dependencies
+3. Create MongoDB Java Connection
 // Creating a Mongoclient 
 // Creating a MongoDatabase
 // Creating/getting Collection and Document
