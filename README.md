@@ -18,3 +18,16 @@ A beginner-friendly tutorial to learn how to integrate and work with MongoDB usi
    ```bash
    git clone https://github.com/your-username/Simple-MongoDB-Tutorial-With-Java.git
    cd Simple-MongoDB-Tutorial-With-Java
+Create a Java Project
+Using Eclipse create a simple Java-Maven Project.
+
+
+## Steps to follow :
+1. import Maven Dependencies
+2. Create MongoDB Java Connection
+// Creating a Mongoclient 
+// Creating a MongoDatabase
+// Creating/getting Collection and Document
+// Inserting sample record by creating collection and document.
+// Drop any Database:
+// List all databases
