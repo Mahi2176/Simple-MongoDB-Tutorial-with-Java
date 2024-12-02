@@ -1,0 +1,56 @@
+import org.bson.Document;
+
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoDatabase;
+//MongoClient API, which is an interface between java program and MongoDB server.
+//MongoClient is used to create connection, connect to database, retrieve collection names and to perform CURD operations.
+//MongoClient is thread safe, so we can create an instance of MongoClient once and reuse it.
+
+class JavaMongoExample {
+
+	public static void main(String[] args) {
+
+		// Creating a Mongo client 
+		MongoClient mongoClient = new MongoClient( "localhost" , 27017 ); 
+		System.out.println("Created Mongo Connection successfully"); 
+
+
+		//When Mongo sees that database doesn’t exist, it will create it for us:
+		//Create a database
+		MongoDatabase db = mongoClient.getDatabase("lib");
+		System.out.println("Get database is successful");
+
+		//Listing all database names present in MongoDB:
+
+		System.out.println("Below are list of databases present in MongoDB");
+		// To get all database names        
+		MongoCursor<String> dbsCursor = mongoClient.listDatabaseNames().iterator();
+		while(dbsCursor.hasNext()) {
+			System.out.println(dbsCursor.next());
+		}
+
+
+		//Inserting sample record by creating collection and document.
+		MongoCollection<Document>  collection= db.getCollection("demo");
+		Document doc =new Document("name","SimplifyingTech");
+		collection.insertOne(doc);
+		System.out.println("########### Insert is completed  ###############");
+
+		
+//		//Drop Database
+//		mongoClient.dropDatabase("demo");
+//		System.out.println("####### Database dropped successfully #########");
+//
+//
+//		System.out.println("After Database getting dropped, present list of Database's");
+//		//list all databases
+//		MongoCursor<String> dbsCursor2 = mongoClient.listDatabaseNames().iterator();
+//		while(dbsCursor2.hasNext()) {
+//			System.out.println(dbsCursor2.next());
+//		}
+
+
+	}
+}
